@@ -1,0 +1,52 @@
+{
+  "semi": true,
+  "trailingComma": "es5",
+  "singleQuote": true,
+  "printWidth": 100,
+  "tabWidth": 2,
+  "useTabs": false,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": false,
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "proseWrap": "preserve",
+  "htmlWhitespaceSensitivity": "css",
+  "vueIndentScriptAndStyle": false,
+  "endOfLine": "lf",
+  "embeddedLanguageFormatting": "auto",
+  "singleAttributePerLine": false,
+  "plugins": [
+    "prettier-plugin-solidity",
+    "@trivago/prettier-plugin-sort-imports"
+  ],
+  "overrides": [
+    {
+      "files": "*.sol",
+      "options": {
+        "parser": "solidity-parse",
+        "printWidth": 80,
+        "tabWidth": 4,
+        "useTabs": false,
+        "singleQuote": false,
+        "bracketSpacing": false
+      }
+    },
+    {
+      "files": "*.{ts,tsx}",
+      "options": {
+        "importOrder": [
+          "^react",
+          "^@/components/(.*)$",
+          "^@/hooks/(.*)$",
+          "^@/utils/(.*)$",
+          "^@/types/(.*)$",
+          "^@/(.*)$",
+          "^[./]"
+        ],
+        "importOrderSeparation": true,
+        "importOrderSortSpecifiers": true
+      }
+    }
+  ]
+}

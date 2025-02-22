@@ -1,0 +1,97 @@
+{
+    "compilerOptions": {
+      // Type Checking
+      "strict": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
+      "strictFunctionTypes": true,
+      "strictBindCallApply": true,
+      "strictPropertyInitialization": true,
+      "noImplicitThis": true,
+      "useUnknownInCatchVariables": true,
+      "alwaysStrict": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "noUncheckedIndexedAccess": true,
+      "noImplicitOverride": true,
+      "allowUnusedLabels": false,
+      "allowUnreachableCode": false,
+  
+      // Modules
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["src/*"],
+        "@app/*": ["apps/*"],
+        "@packages/*": ["packages/*"],
+        "@core/*": ["packages/core/src/*"],
+        "@ai/*": ["packages/ai/src/*"],
+        "@common/*": ["packages/common/src/*"]
+      },
+      "types": ["node", "jest"],
+      "resolveJsonModule": true,
+  
+      // Emit
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "outDir": "dist",
+      "removeComments": false,
+      "noEmitOnError": true,
+      "preserveConstEnums": true,
+      "incremental": true,
+  
+      // JavaScript Support
+      "allowJs": true,
+      "checkJs": true,
+  
+      // Interop Constraints
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "isolatedModules": true,
+      "allowSyntheticDefaultImports": true,
+  
+      // Language and Environment
+      "target": "ES2022",
+      "lib": [
+        "DOM",
+        "DOM.Iterable",
+        "ESNext"
+      ],
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "jsx": "preserve",
+  
+      // Completeness
+      "skipLibCheck": true
+    },
+    "include": [
+      "apps/**/*.ts",
+      "apps/**/*.tsx",
+      "packages/**/*.ts",
+      "packages/**/*.tsx"
+    ],
+    "exclude": [
+      "node_modules",
+      "dist",
+      "build",
+      ".next",
+      "coverage",
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      "**/__tests__/**"
+    ],
+    "references": [
+      { "path": "./apps/web" },
+      { "path": "./apps/api" },
+      { "path": "./packages/core" },
+      { "path": "./packages/ai" },
+      { "path": "./packages/common" }
+    ],
+    "ts-node": {
+      "compilerOptions": {
+        "module": "CommonJS"
+      }
+    }
+  }  

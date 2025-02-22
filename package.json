@@ -1,0 +1,95 @@
+{
+    "name": "strix",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Advanced blockchain contract optimization and security analysis platform",
+    "engines": {
+      "node": ">=18.0.0",
+      "pnpm": ">=8.0.0"
+    },
+    "scripts": {
+      "prepare": "husky install",
+      "preinstall": "npx only-allow pnpm",
+      "clean": "pnpm -r clean && rimraf node_modules",
+      "build": "pnpm -r build",
+      "dev": "pnpm --parallel -r dev",
+      "test": "jest --coverage",
+      "test:watch": "jest --watch",
+      "lint": "pnpm -r lint",
+      "lint:fix": "pnpm -r lint:fix",
+      "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+      "type-check": "pnpm -r type-check",
+      "deps:update": "pnpm update -r --latest",
+      "deps:check": "pnpm -r exec npm-check-updates",
+      "docker:up": "docker-compose up -d",
+      "docker:down": "docker-compose down",
+      "db:migrate": "pnpm --filter api migrate",
+      "db:seed": "pnpm --filter api seed",
+      "analyze:bundle": "pnpm --filter web analyze",
+      "storybook": "pnpm --filter web storybook",
+      "generate:api": "openapi-generator-cli generate -i ./docs/api/openapi.yaml -g typescript-axios -o ./packages/api-client"
+    },
+    "workspaces": [
+      "apps/*",
+      "packages/*"
+    ],
+    "dependencies": {
+      "dotenv": "^16.3.1",
+      "tslib": "^2.6.2"
+    },
+    "devDependencies": {
+      "@commitlint/cli": "^18.4.3",
+      "@commitlint/config-conventional": "^18.4.3",
+      "@types/jest": "^29.5.11",
+      "@types/node": "^20.10.5",
+      "@typescript-eslint/eslint-plugin": "^6.15.0",
+      "@typescript-eslint/parser": "^6.15.0",
+      "eslint": "^8.56.0",
+      "eslint-config-prettier": "^9.1.0",
+      "eslint-plugin-import": "^2.29.1",
+      "eslint-plugin-jest": "^27.6.0",
+      "eslint-plugin-prettier": "^5.1.0",
+      "husky": "^8.0.3",
+      "jest": "^29.7.0",
+      "lint-staged": "^15.2.0",
+      "npm-check-updates": "^16.14.12",
+      "prettier": "^3.1.1",
+      "rimraf": "^5.0.5",
+      "ts-jest": "^29.1.1",
+      "typescript": "^5.3.3"
+    },
+    "commitlint": {
+      "extends": [
+        "@commitlint/config-conventional"
+      ]
+    },
+    "lint-staged": {
+      "*.{js,jsx,ts,tsx}": [
+        "eslint --fix",
+        "prettier --write"
+      ],
+      "*.{json,md}": [
+        "prettier --write"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/yourusername/strix.git"
+    },
+    "keywords": [
+      "blockchain",
+      "smart-contracts",
+      "optimization",
+      "security",
+      "ethereum",
+      "solana",
+      "cosmos"
+    ],
+    "author": "Your Name <your.email@example.com>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/yourusername/strix/issues"
+    },
+    "homepage": "https://github.com/yourusername/strix#readme"
+  }
+  

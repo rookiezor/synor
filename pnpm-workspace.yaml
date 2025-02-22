@@ -1,0 +1,17 @@
+packages:
+  # Include all packages in the apps directory
+  - 'apps/*'
+  # Include all packages in the packages directory
+  - 'packages/*'
+  # Exclude all test directories
+  - '!**/test/**'
+  # Exclude all coverage directories
+  - '!**/coverage/**'
+  # Exclude build artifacts
+  - '!**/dist/**'
+  - '!**/.next/**'
+  # Exclude storybook static builds
+  - '!**/storybook-static/**'
+  # Exclude temporary directories
+  - '!**/temp/**'
+  - '!**/tmp/**'
