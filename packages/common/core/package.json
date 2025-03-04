@@ -1,0 +1,59 @@
+{
+    "name": "@synor/core-cosmos",
+    "version": "1.0.0",
+    "description": "Cosmos blockchain optimization and analysis module",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+      "build": "tsc",
+      "test": "jest",
+      "lint": "eslint . --ext .ts",
+      "clean": "rimraf dist",
+      "prepare": "npm run build",
+      "prebuild": "npm run clean"
+    },
+    "dependencies": {
+      "@cosmjs/stargate": "^0.31.0",
+      "@cosmjs/cosmwasm-stargate": "^0.31.0",
+      "@cosmjs/proto-signing": "^0.31.0",
+      "@cosmjs/tendermint-rpc": "^0.31.0",
+      "@cosmjs/encoding": "^0.31.0",
+      "cosmjs-types": "^0.8.0",
+      "cosmwasm": "^1.1.1",
+      "long": "^5.2.3",
+      "protobufjs": "^7.2.4"
+    },
+    "devDependencies": {
+      "@types/jest": "^29.5.0",
+      "@types/node": "^18.15.11",
+      "@typescript-eslint/eslint-plugin": "^5.57.1",
+      "@typescript-eslint/parser": "^5.57.1",
+      "eslint": "^8.37.0",
+      "jest": "^29.5.0",
+      "rimraf": "^4.4.1",
+      "ts-jest": "^29.1.0",
+      "typescript": "^5.0.3"
+    },
+    "peerDependencies": {
+      "@synor/core-common": "workspace:*"
+    },
+    "keywords": [
+      "cosmos",
+      "blockchain",
+      "optimization",
+      "analysis",
+      "smart-contracts"
+    ],
+    "author": "Synor Protocol",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/synor-protocol/synor.git"
+    },
+    "bugs": {
+      "url": "https://github.com/synor-protocol/synor/issues"
+    },
+    "engines": {
+      "node": ">=16.0.0"
+    }
+  }
